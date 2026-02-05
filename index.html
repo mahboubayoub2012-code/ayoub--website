@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أيوب لخدمات الويب - صناعة مواقع HTML احترافية</title>
+    <meta name="description" content="نحن نصنع مواقع HTML احترافية حسب مواصفاتك. اطلب مواصفاتك ونحن ننفذها باحترافية عالية.">
+    <meta name="keywords" content="مواقع HTML, تصميم مواقع, تطوير ويب, خدمات ويب, أيوب">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563eb",
+                        secondary: "#1e40af",
+                        accent: "#f59e0b",
+                        dark: "#1f2937",
+                        light: "#f8fafc"
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif']
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 font-cairo">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2 space-x-reverse">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">أ</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-dark">أيوب لخدمات الويب</h1>
+                        <p class="text-gray-600 text-sm">صناعة مواقع HTML احترافية</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="text-dark hover:text-primary font-medium transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('home').scrollIntoView({behavior: 'smooth'})">الرئيسية</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior: 'smooth'})">الخدمات</a>
+                    <a href="#how-it-works" class="text-dark hover:text-primary font-medium transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">كيف نعمل</a>
+                    <a href="#portfolio" class="text-dark hover:text-primary font-medium transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">أعمالنا</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">اتصل بنا</a>
+                </div>
+                
+                <button class="md:hidden text-dark text-2xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4 bg-white rounded-lg shadow-lg p-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-dark hover:text-primary font-medium py-2" onclick="event.preventDefault(); document.getElementById('home').scrollIntoView({behavior: 'smooth'}); toggleMobileMenu()">الرئيسية</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium py-2" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior: 'smooth'}); toggleMobileMenu()">الخدمات</a>
+                    <a href="#how-it-works" class="text-dark hover:text-primary font-medium py-2" onclick="event.preventDefault(); document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'}); toggleMobileMenu()">كيف نعمل</a>
+                    <a href="#portfolio" class="text-dark hover:text-primary font-medium py-2" onclick="event.preventDefault(); document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'}); toggleMobileMenu()">أعمالنا</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium py-2" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); toggleMobileMenu()">اتصل بنا</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">نحن نصنع مواقع <span class="text-accent">HTML</span> حسب مواصفاتك</h1>
+                <p class="text-xl mb-8 opacity-90">الزبون يطلب المواصفات ونحن ننفذها باحترافية عالية. موقعك سيكون <span class="font-bold">خرافي</span> كما تريد!</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button class="bg-accent text-dark font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors duration-200 text-lg" onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})">
+                        اطلب موقعك الآن
+                    </button>
+                    <button class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 text-lg" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                        استعرض خدماتنا
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">خدماتنا <span class="text-primary">المتميزة</span></h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">نقدم مجموعة شاملة من خدمات تطوير الويب لتحقيق رؤيتك</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 service-card">
+                    <div class="feature-icon rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">تصميم مواقع HTML مخصصة</h3>
+                    <p class="text-gray-600 mb-6">نصنع مواقع HTML كاملة حسب مواصفاتك الدقيقة. كل عنصر يتم تصميمه بدقة ليلبي احتياجاتك.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>تصميم متجاوب لجميع الأجهزة</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>شفرة نظيفة وسهلة الصيانة</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>تحسين لمحركات البحث</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 service-card">
+                    <div class="feature-icon rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">واجهات مستخدم جذابة</h3>
+                    <p class="text-gray-600 mb-6">نصمم واجهات مستخدم مذهلة تجعل موقعك يبدو احترافياً وجذاباً للزوار.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>تصميم عصري وجذاب</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>ألوان متناسقة وجذابة</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>تجربة مستخدم سلسة</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 service-card">
+                    <div class="feature-icon rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">مواقع سريعة الأداء</h3>
+                    <p class="text-gray-600 mb-6">نضمن لك مواقع سريعة التحميل مع تحسينات متقدمة لأداء ممتاز.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>تحميل سريع للصفحات</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>تحسين Core Web Vitals</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary ml-2"></i>
+                            <span>استضافة موصى بها</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Additional Services -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                    <i class="fas fa-mobile-alt text-primary text-3xl mb-4"></i>
+                    <h4 class="font-bold text-dark mb-2">مواقع متجاوبة</h4>
+                    <p class="text-gray-600 text-sm">تعمل على جميع الأجهزة</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                    <i class="fas fa-shopping-cart text-primary text-3xl mb-4"></i>
+                    <h4 class="font-bold text-dark mb-2">متاجر إلكترونية</h4>
+                    <p class="text-gray-600 text-sm">لبيع منتجاتك أونلاين</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                    <i class="fas fa-blog text-primary text-3xl mb-4"></i>
+                    <h4 class="font-bold text-dark mb-2">مدونات احترافية</h4>
+                    <p class="text-gray-600 text-sm">لنشر محتواك باحترافية</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md text-center">
+                    <i class="fas fa-chart-line text-primary text-3xl mb-4"></i>
+                    <h4 class="font-bold text-dark mb-2">تحليلات وإحصائيات</h4>
+                    <p class="text-gray-600 text-sm">متابعة أداء موقعك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">كيف <span class="text-primary">نعمل</span></h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">عملية بسيطة لتحويل فكرتك إلى موقع ويب حقيقي</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">تقديم الطلب</h3>
+                    <p class="text-gray-600">تخبرنا بمواصفات موقعك وما تريده بالضبط</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">التصميم الأولي</h3>
+                    <p class="text-gray-600">نعد لك تصميماً أولياً للموقع حسب طلبك</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">التطوير والبرمجة</h3>
+                    <p class="text-gray-600">نقوم ببرمجة الموقع بكافة تفاصيله</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">التسليم والدعم</h3>
+                    <p class="text-gray-600">نسلم لك الموقع مع دعم فني مستمر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">أعمالنا <span class="text-primary">السابقة</span></h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">شاهد بعض المواقع التي قمنا بتصميمها وتطويرها</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=1" alt="موقع تجاري إلكتروني" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">موقع تجاري إلكتروني</h3>
+                        <p class="text-gray-600 mb-4">موقع متكامل لشركة تجارية مع عرض المنتجات والخدمات</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">HTML5</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">CSS3</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=2" alt="مدونة تعليمية" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">مدونة تعليمية</h3>
+                        <p class="text-gray-600 mb-4">مدونة متخصصة في تقديم محتوى تعليمي مع نظام إدارة محتوى</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">HTML5</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/600/400?random=3" alt="متجر إلكتروني" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">متجر إلكتروني</h3>
+                        <p class="text-gray-600 mb-4">متجر متكامل لبيع المنتجات مع نظام سلة تسوق متقدم</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">HTML5</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">CSS3</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order-form" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary to-secondary rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">اطلب موقعك <span class="text-accent">الخرافي</span> الآن</h2>
+                    <p class="text-white opacity-90">أخبرنا بمواصفات موقعك وسنقوم بتنفيذه لك باحترافية عالية</p>
+                </div>
+                
+                <form id="website-order-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-white mb-2 font-medium">اسمك الكامل</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="أدخل اسمك الكامل">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white mb-2 font-medium">البريد الإلكتروني</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="example@email.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white mb-2 font-medium">نوع الموقع</label>
+                        <select class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+                            <option value="" class="text-dark">اختر نوع الموقع</option>
+                            <option value="commercial" class="text-dark">موقع تجاري</option>
+                            <option value="blog" class="text-dark">مدونة</option>
+                            <option value="ecommerce" class="text-dark">متجر إلكتروني</option>
+                            <option value="portfolio" class="text-dark">موقع شخصي/معرض أعمال</option>
+                            <option value="other" class="text-dark">أخرى</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white mb-2 font-medium">مواصفات الموقع (ما الذي تريده بالضبط؟)</label>
+                        <textarea rows="5" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="صف لنا مواصفات موقعك بالتفصيل. ما هي الألوان التي تفضلها؟ ما هي الصفحات التي تريدها؟ ما هي الميزات التي تحتاجها؟"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white mb-2 font-medium">الميزانية المتوقعة</label>
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <input type="range" min="500" max="5000" step="100" value="1500" class="w-full" id="budget-slider">
+                            <span class="text-white font-bold text-xl" id="budget-value">1500 ريال</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center pt-4">
+                        <button type="submit" class="bg-accent text-dark font-bold py-4 px-12 rounded-lg hover:bg-yellow-500 transition-colors duration-200 text-lg">
+                            <i class="fas fa-paper-plane ml-2"></i> أرسل الطلب الآن
+                        </button>
+                        <p class="text-white opacity-80 mt-4 text-sm">سنرد عليك خلال 24 ساعة لعرض التصميم الأولي</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">اتصل <span class="text-primary">بنا</span></h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">نحن هنا لمساعدتك في تحقيق رؤيتك لموقعك الإلكتروني</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-6">معلومات التواصل</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center ml-4">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">الهاتف</h4>
+                                <p class="text-gray-600">+966 55 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center ml-4">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">البريد الإلكتروني</h4>
+                                <p class="text-gray-600">info@aiyub-web.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center ml-4">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">العنوان</h4>
+                                <p class="text-gray-600">الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold text-dark mb-4">تابعنا على</h4>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors duration-200">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors duration-200">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors duration-200">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors duration-200">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-dark mb-6">أرسل لنا رسالة</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-dark mb-2 font-medium">الاسم</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="اسمك">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-dark mb-2 font-medium">البريد الإلكتروني</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="example@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-dark mb-2 font-medium">الرسالة</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-secondary transition-colors duration-200 w-full">
+                            <i class="fas fa-paper-plane ml-2"></i> إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 space-x-reverse mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">أ</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">أيوب لخدمات الويب</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">نحن نصنع مواقع HTML احترافية حسب مواصفاتك. اطلب مواصفاتك ونحن ننفذها باحترافية عالية.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">روابط سريعة</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('home').scrollIntoView({behavior: 'smooth'})">الرئيسية</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior: 'smooth'})">الخدمات</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">أعمالنا</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">خدماتنا</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">تصميم مواقع HTML</li>
+                        <li class="text-gray-400">تطوير واجهات المستخدم</li>
+                        <li class="text-gray-400">مواقع متجاوبة</li>
+                        <li class="text-gray-400">متاجر إلكترونية</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">النشرة البريدية</h4>
+                    <p class="text-gray-400 mb-4">اشترك لتصلك آخر عروضنا وأخبارنا</p>
+                    <div class="flex">
+                        <input type="email" class="flex-grow px-4 py-2 rounded-r-lg text-dark focus:outline-none" placeholder="بريدك الإلكتروني">
+                        <button class="bg-primary px-4 py-2 rounded-l-lg hover:bg-secondary transition-colors duration-200">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 أيوب لخدمات الويب. جميع الحقوق محفوظة.</p>
+                <p class="mt-2">صنع بكل ❤️ لخدمتكم</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-green-600 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-dark mb-4">تم إرسال طلبك بنجاح!</h3>
+                <p class="text-gray-600 mb-6">شكراً لتواصلك معنا. سنقوم بالرد عليك خلال 24 ساعة لعرض التصميم الأولي لموقعك.</p>
+                <button id="close-modal" class="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-secondary transition-colors duration-200">
+                    حسناً
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Define data at the beginning
+        const servicesData = [
+            { "id": 1, "title": "تصميم مواقع HTML مخصصة", "description": "نصنع مواقع HTML كاملة حسب مواصفاتك الدقيقة", "icon": "fa-code" },
+            { "id": 2, "title": "واجهات مستخدم جذابة", "description": "نصمم واجهات مستخدم مذهلة تجعل موقعك يبدو احترافياً", "icon": "fa-paint-brush" },
+            { "id": 3, "title": "مواقع سريعة الأداء", "description": "نضمن لك مواقع سريعة التحميل مع تحسينات متقدمة", "icon": "fa-rocket" }
+        ];
+        
+        const portfolioData = [
+            { "id": 1, "title": "موقع تجاري إلكتروني", "description": "موقع متكامل لشركة تجارية", "image": "https://picsum.photos/600/400?random=1", "tags": ["HTML5", "CSS3",
